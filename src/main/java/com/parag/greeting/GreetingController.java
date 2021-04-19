@@ -26,4 +26,8 @@ public class GreetingController {
         return greeting.getId()+ " "+ greeting.getContent()+" !!";
     }
 
+    public String sayHelloPut(@PathVariable String firstname , @RequestParam(value = "lastName") String lastName){
+        return "Hello " + firstname + " "+ lastName + " !";
+    }
+
 }
