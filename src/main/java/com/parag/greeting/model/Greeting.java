@@ -1,4 +1,4 @@
-package com.parag.greeting;
+package com.parag.greeting.model;
 
 public class Greeting {
     private final long id;
