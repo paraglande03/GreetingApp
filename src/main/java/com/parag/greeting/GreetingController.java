@@ -16,7 +16,7 @@ public class GreetingController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter =new AtomicLong();
 
-@GetMapping(value = {"","/","/home"})
+    @GetMapping(value = {"","/","/home"})
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name){
         return new Greeting(counter.incrementAndGet(), String.format(template,name));
     }
@@ -26,6 +26,7 @@ public class GreetingController {
         return greeting.getId()+ " "+ greeting.getContent()+" !!";
     }
 
+    @PutMapping("/put/{firstName}")
     public String sayHelloPut(@PathVariable String firstname , @RequestParam(value = "lastName") String lastName){
         return "Hello " + firstname + " "+ lastName + " !";
     }
